@@ -1,10 +1,26 @@
+import satdata from "./satData.jsx";
+
 const Buttons = ({ filterByType, setSat, displaySats }) => {
+
+
   return (
     <div>
-      <button>Placeholder Button</button>
-      <button>All Orbits</button>
+      {displaySats.map((sat, id) => 
+        <button onClick={() => filterByType(sat)} key={id}>
+          {sat} Orbit
+        </button>
+
+)}
+
+        <button onClick={() => setSat(satdata)} >All Orbits</button>
+     
     </div>
-  );
+)
+
+
+  
+
+
 };
 
 export default Buttons;
